@@ -6,14 +6,15 @@ export default NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
-    })
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
     // ...add more providers here
   ],
   // If you want to have a custom page... include this..
   pages: {
-    signIn: '/auth/signin'
+    signIn: '/auth/signin',
   },
+  secret: process.env.NEXT_PUBLIC_SECRET,
   // If you dont have custom page... style with this...
   // theme: {
   //   logo: "https://links.papareact.com/sq0",
@@ -21,15 +22,15 @@ export default NextAuth({
   //   colorScheme: "auto",
   // },
   callbacks: {
-    async session ({ session, token, user }) {
+    async session({ session, token, user }) {
       session.user.username = session.user.name
         .split(' ')
         .join('')
         .toLowerCase();
       session.user.uid = token.sub;
       return session;
-    }
-  }
+    },
+  },
 });
 
 // OAuth Creds Screen, click Edit App
