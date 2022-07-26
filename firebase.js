@@ -4,12 +4,12 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCK5REWhDHcLsiByjuTxp8p7mma9ODteLI',
-  authDomain: 'instaclone-37924.firebaseapp.com',
-  projectId: 'instaclone-37924',
-  storageBucket: 'instaclone-37924.appspot.com',
-  messagingSenderId: '779829475841',
-  appId: '1:779829475841:web:7368acae140391f5f9de00',
+  apiKey: 'AIzaSyBERg-VScrW-yf8k-TMEvEF3dF9P25f848',
+  authDomain: 'clone-insta-416a4.firebaseapp.com',
+  projectId: 'clone-insta-416a4',
+  storageBucket: 'clone-insta-416a4.appspot.com',
+  messagingSenderId: '3239522371',
+  appId: '1:3239522371:web:ce5ed2c875492496a524f6'
 };
 
 const app = firebase.initializeApp(firebaseConfig);

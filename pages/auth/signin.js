@@ -1,7 +1,7 @@
 import { getProviders, signIn as SignInAsProvider } from 'next-auth/react';
 import Header from '../../components/Header';
 
-export default function SignIn({ providers }) {
+export default function SignIn ({ providers }) {
   return (
     <>
       <Header />
@@ -20,8 +20,7 @@ export default function SignIn({ providers }) {
               <button
                 className='p-3 bg-blue-500 rounded-lg text-white'
                 onClick={() =>
-                  SignInAsProvider(provider.id, { callbackUrl: '/' })
-                }
+                  SignInAsProvider(provider.id, { callbackUrl: '/' })}
               >
                 Sign in with {provider.name}
               </button>
@@ -34,10 +33,10 @@ export default function SignIn({ providers }) {
 }
 
 // This is the recommended way for Next.js 9.3 or newer
-export async function getServerSideProps(context) {
+export async function getServerSideProps (context) {
   const providers = await getProviders();
   return {
-    props: { providers },
+    props: { providers }
   };
 }
 
